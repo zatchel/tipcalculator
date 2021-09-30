@@ -1,0 +1,152 @@
+html {
+  font-size: 62.5%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 100vw;
+}
+
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  position: fixed;
+  width: 100vw;
+}
+
+.container {
+  display: -ms-grid;
+  display: grid;
+  height: 100vh;
+  width: 100vw;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  -ms-grid-rows: .18fr .14fr .27fr .13fr .28fr;
+      grid-template-rows: .18fr .14fr .27fr .13fr .28fr;
+  background: #c5e4e7;
+}
+
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  letter-spacing: .6em;
+  font-weight: 400;
+  font-size: 1.5rem;
+  font-family: "Space Mono", monospace;
+  background-color: #c5e4e7;
+  color: #00494d;
+}
+
+.container div {
+  width: 100vw;
+}
+
+.bill {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  background-color: white;
+  border: 0px solid white;
+  border-top-right-radius: 3em;
+  border-top-left-radius: 3em;
+}
+
+.bill p {
+  display: block;
+  position: relative;
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+  color: #5e7a7d;
+  font-size: 1.4rem;
+  height: 0;
+  width: 0;
+  top: 1rem;
+  left: 8%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.bill input {
+  height: 35%;
+  width: 85%;
+  margin: auto;
+  padding-top: .7rem;
+  padding-right: 1.3rem;
+  padding-bottom: .8rem;
+  border-radius: .3rem;
+  outline: none;
+  border: none;
+  text-align: right;
+  color: #00494d;
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+  font-size: 2.4rem;
+  background-color: #f4fafa;
+}
+
+.bill input::-webkit-input-placeholder {
+  font-family: "Space Mono", monospace;
+  text-align: left;
+  font-size: 2.4rem;
+  padding-left: 2rem;
+  font-weight: 400;
+  color: #7f9c9f;
+}
+
+.bill input:-ms-input-placeholder {
+  font-family: "Space Mono", monospace;
+  text-align: left;
+  font-size: 2.4rem;
+  padding-left: 2rem;
+  font-weight: 400;
+  color: #7f9c9f;
+}
+
+.bill input::-ms-input-placeholder {
+  font-family: "Space Mono", monospace;
+  text-align: left;
+  font-size: 2.4rem;
+  padding-left: 2rem;
+  font-weight: 400;
+  color: #7f9c9f;
+}
+
+.bill input::placeholder {
+  font-family: "Space Mono", monospace;
+  text-align: left;
+  font-size: 2.4rem;
+  padding-left: 2rem;
+  font-weight: 400;
+  color: #7f9c9f;
+}
+
+.tip {
+  background-color: white;
+}
+
+.numberPeople {
+  background-color: white;
+}
+
+.calculation {
+  background-color: white;
+}
+/*# sourceMappingURL=styles.css.map */

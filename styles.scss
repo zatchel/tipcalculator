@@ -1,0 +1,141 @@
+// variables //
+
+$strongCyan: hsl(172, 67%, 45%);
+
+$veryDarkCyan: hsl(183, 100%, 15%);
+$darkGrayishCyan: hsl(186, 14%, 43%);
+$darkGrayishCyanTwo: hsl(184, 14%, 56%);
+$lightGrayishCyan: hsl(185, 41%, 84%);
+$lightGrayishCyanTwo: hsl(189, 41%, 97%);
+$white: hsl(0, 0%, 100%);
+
+$font: 'Space Mono', monospace;
+
+//**************************************//
+
+//class names for reference
+
+// .header
+// .container
+// .bill
+// .tip
+// .numberPeople
+// .calculation
+
+//***************GLOBALS***************//
+
+
+html{
+    font-size: 62.5%;
+    box-sizing: border-box;
+    width: 100vw;
+    //font size set for easy rem calcs
+    //so 1.6rem = 16px, 2.8rem = 28px
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+body{
+    position: fixed;
+    width: 100vw;
+}
+
+
+//*************** MOBILE ***************//
+
+.container{
+    display: grid;
+    height: 100vh;
+    width: 100vw;
+    grid-template-columns: 1fr;
+    grid-template-rows: .18fr .14fr .27fr .13fr .28fr;
+    background: $lightGrayishCyan;
+
+}
+
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: .6em;
+    font-weight: 400;
+    font-size: 1.5rem;
+    font-family: $font;
+    background-color: $lightGrayishCyan;
+    color: $veryDarkCyan;
+}
+
+.container div{
+    width: 100vw;
+
+}
+
+.bill{
+    display: flex;
+    flex-direction: row;
+    background-color: $white;
+    border: 0px solid white;
+    border-top-right-radius: 3em;
+    border-top-left-radius: 3em;
+}
+
+.bill p{
+    display: block;
+    position: relative;
+    font-family: $font;
+    font-weight: 700;
+    color: $darkGrayishCyan;
+    font-size: 1.4rem;
+    height: 0;
+    width: 0;
+    top: 1rem;
+    left: 8%;
+    justify-content: center;
+}
+
+.bill input{
+    height: 35%;
+    width: 85%;
+    margin: auto;
+    padding-top: .7rem;
+    padding-right: 1.3rem;
+    padding-bottom: .8rem;
+    border-radius: .3rem;
+    outline: none;
+    border: none;
+    text-align: right;
+    color: $veryDarkCyan;
+    font-family: $font;
+    font-weight: 700;
+    font-size: 2.4rem;
+    background-color: $lightGrayishCyanTwo;
+}
+
+.bill input::placeholder{
+    font-family: $font;
+    text-align: left;
+    font-size: 2.4rem;
+    padding-left: 2rem;
+    font-weight: 400;
+    color: $darkGrayishCyanTwo;
+}
+
+.tip{
+    background-color: $white;
+}
+
+.numberPeople{
+    background-color: $white;
+}
+
+.calculation{
+    background-color: $white;
+}
