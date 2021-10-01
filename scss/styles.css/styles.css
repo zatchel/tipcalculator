@@ -262,12 +262,21 @@ body {
   font-size: 2.4rem;
   background-color: #f4fafa;
   margin-top: 3rem;
+  margin-left: 2.7rem;
   background-image: url(/images/icon-person.svg);
   background-position: 10px 10px;
   background-repeat: no-repeat;
 }
 
-.calculation {
+.calculationContainer {
   background-color: white;
+}
+
+.calculation {
+  background-color: #00494d;
+  height: 80%;
+  width: 80% !important;
+  margin-left: 2.8rem;
+  margin-right: 3rem;
 }
 /*# sourceMappingURL=styles.css.map */

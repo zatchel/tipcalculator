@@ -229,12 +229,24 @@ body{
 .numberPeople input{
     @include numberInputFields();
     margin-top: 3rem;
+    margin-left: 2.7rem;
     background-image: url(/images/icon-person.svg);
     background-position: 10px 10px;
     background-repeat: no-repeat;
 }
 
 
+.calculationContainer{
+    background-color: white;
+    
+}
+
 .calculation{
-    background-color: $white;
+    background-color: $veryDarkCyan;
+    height: 80%;
+    width: 80% !important; //why does important make this work?? it must be inheriting something.
+    //i need to figure this out, like i can't use important in a solution lmao fuck i quit, but this is where i'm leaving off 
+    margin-left: 2.8rem;
+    margin-right: 3rem;
+    
 }
