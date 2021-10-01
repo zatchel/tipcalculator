@@ -46,6 +46,7 @@ html{
 body{
     position: fixed;
     width: 100vw;
+    background: $darkGrayishCyan;
 }
 
 
@@ -78,30 +79,36 @@ body{
 
 }
 
-.bill{
-    display: flex;
-    flex-direction: row;
-    background-color: $white;
-    border: 0px solid white;
-    border-top-right-radius: 3em;
-    border-top-left-radius: 3em;
-}
-
-.bill p{
-    display: block;
+@mixin headingStyle(){
+    // display: block;
     position: relative;
     font-family: $font;
     font-weight: 700;
     color: $darkGrayishCyan;
     font-size: 1.4rem;
+    white-space: nowrap;
     height: 0;
     width: 0;
-    top: 1rem;
-    left: 8%;
-    justify-content: center;
+    // justify-content: center;
 }
 
-.bill input{
+.bill{
+    display: flex;
+    flex-direction: row;
+    background-color: $white;
+    // border: 0px solid white;
+    border-top-right-radius: 3em;
+    border-top-left-radius: 3em;
+}
+
+.bill p{
+    @include headingStyle();
+    top: 1rem;
+    left: 8%;
+}
+
+
+@mixin numberInputFields() {
     height: 35%;
     width: 85%;
     margin: auto;
@@ -119,6 +126,10 @@ body{
     background-color: $lightGrayishCyanTwo;
 }
 
+.bill input{
+    @include numberInputFields();
+}
+
 .bill input::placeholder{
     font-family: $font;
     text-align: left;
@@ -128,13 +139,101 @@ body{
     color: $darkGrayishCyanTwo;
 }
 
+
+.tip p{
+    @include headingStyle();
+    position: absolute;
+    bottom: 70%;
+    right: 92%;
+
+}
+
+
 .tip{
-    background-color: $white;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: 
+    "button1 button2"
+    "button3 button4"
+    "button5 button6";
+    align-items: center;
+    justify-items: center;
+    padding: 0 3rem;
+    background: white
+}
+
+.button1{
+    grid-area: button1;
+    
+}
+
+.button2{
+    grid-area: button2;
+}
+
+.button3{
+    grid-area: button3;
+}
+
+.button4{
+    grid-area: button4;
+}
+
+.button5{
+    grid-area: button5;
+}
+
+.button6{
+    grid-area: button6;
+    width: 13rem;
+    height: 4.5rem;
+    background-color: $lightGrayishCyan;
+    color: $darkGrayishCyan;
+    font-family: $font;
+    font-weight: 700;
+    font-size: 2.4rem;
+    border-radius: .7rem;
+    outline: none;
+    border: none;
+}
+
+.tip button:not(.button6){
+    width: 13rem;
+    height: 4.5rem;
+    background-color: $veryDarkCyan;
+    color: white;
+    font-family: $font;
+    font-weight: 700;
+    font-size: 2.4rem;
+    border-radius: .7rem;
+    outline: none;
+    border: none;
+    
+}
+
+.tip button:hover{
+    background-color: $strongCyan;
+}
+
+.numberPeople p{
+    @include headingStyle();
+    top: 1rem;
+    left: 8%;
 }
 
 .numberPeople{
     background-color: $white;
 }
+
+.numberPeople input{
+    @include numberInputFields();
+    margin-top: 3rem;
+    background-image: url(/images/icon-person.svg);
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+}
+
 
 .calculation{
     background-color: $white;

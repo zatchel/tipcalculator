@@ -18,6 +18,7 @@ html {
 body {
   position: fixed;
   width: 100vw;
+  background: #5e7a7d;
 }
 
 .container {
@@ -63,25 +64,21 @@ body {
       -ms-flex-direction: row;
           flex-direction: row;
   background-color: white;
-  border: 0px solid white;
   border-top-right-radius: 3em;
   border-top-left-radius: 3em;
 }
 
 .bill p {
-  display: block;
   position: relative;
   font-family: "Space Mono", monospace;
   font-weight: 700;
   color: #5e7a7d;
   font-size: 1.4rem;
+  white-space: nowrap;
   height: 0;
   width: 0;
   top: 1rem;
   left: 8%;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
 }
 
 .bill input {
@@ -138,12 +135,136 @@ body {
   color: #7f9c9f;
 }
 
+.tip p {
+  position: relative;
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+  color: #5e7a7d;
+  font-size: 1.4rem;
+  white-space: nowrap;
+  height: 0;
+  width: 0;
+  position: absolute;
+  bottom: 70%;
+  right: 92%;
+}
+
 .tip {
-  background-color: white;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  -ms-grid-rows: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
+      grid-template-areas: "button1 button2" "button3 button4" "button5 button6";
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  justify-items: center;
+  padding: 0 3rem;
+  background: white;
+}
+
+.button1 {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: button1;
+}
+
+.button2 {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: button2;
+}
+
+.button3 {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: button3;
+}
+
+.button4 {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: button4;
+}
+
+.button5 {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: button5;
+}
+
+.button6 {
+  -ms-grid-row: 3;
+  -ms-grid-column: 2;
+  grid-area: button6;
+  width: 13rem;
+  height: 4.5rem;
+  background-color: #c5e4e7;
+  color: #5e7a7d;
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+  font-size: 2.4rem;
+  border-radius: .7rem;
+  outline: none;
+  border: none;
+}
+
+.tip button:not(.button6) {
+  width: 13rem;
+  height: 4.5rem;
+  background-color: #00494d;
+  color: white;
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+  font-size: 2.4rem;
+  border-radius: .7rem;
+  outline: none;
+  border: none;
+}
+
+.tip button:hover {
+  background-color: #26c0ab;
+}
+
+.numberPeople p {
+  position: relative;
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+  color: #5e7a7d;
+  font-size: 1.4rem;
+  white-space: nowrap;
+  height: 0;
+  width: 0;
+  top: 1rem;
+  left: 8%;
 }
 
 .numberPeople {
   background-color: white;
+}
+
+.numberPeople input {
+  height: 35%;
+  width: 85%;
+  margin: auto;
+  padding-top: .7rem;
+  padding-right: 1.3rem;
+  padding-bottom: .8rem;
+  border-radius: .3rem;
+  outline: none;
+  border: none;
+  text-align: right;
+  color: #00494d;
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+  font-size: 2.4rem;
+  background-color: #f4fafa;
+  margin-top: 3rem;
+  background-image: url(/images/icon-person.svg);
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
 }
 
 .calculation {
