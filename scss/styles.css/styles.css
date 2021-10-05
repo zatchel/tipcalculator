@@ -16,7 +16,7 @@ html {
 }
 
 body {
-  position: fixed;
+  position: relative;
   width: 100vw;
   background: #5e7a7d;
 }
@@ -56,20 +56,14 @@ body {
 }
 
 .bill {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  position: relative;
   background-color: white;
   border-top-right-radius: 3em;
   border-top-left-radius: 3em;
 }
 
 .bill p {
-  position: relative;
+  position: absolute;
   font-family: "Space Mono", monospace;
   font-weight: 700;
   color: #5e7a7d;
@@ -84,7 +78,6 @@ body {
 .bill input {
   height: 35%;
   width: 85%;
-  margin: auto;
   padding-top: .7rem;
   padding-right: 1.3rem;
   padding-bottom: .8rem;
@@ -97,6 +90,8 @@ body {
   font-weight: 700;
   font-size: 2.4rem;
   background-color: #f4fafa;
+  margin-left: 3rem;
+  margin-top: 3.5rem;
 }
 
 .bill input::-webkit-input-placeholder {
@@ -135,23 +130,10 @@ body {
   color: #7f9c9f;
 }
 
-.tip p {
-  position: relative;
-  font-family: "Space Mono", monospace;
-  font-weight: 700;
-  color: #5e7a7d;
-  font-size: 1.4rem;
-  white-space: nowrap;
-  height: 0;
-  width: 0;
-  position: absolute;
-  bottom: 70%;
-  right: 92%;
-}
-
 .tip {
   display: -ms-grid;
   display: grid;
+  position: relative;
   -ms-grid-columns: 1fr 1fr;
       grid-template-columns: 1fr 1fr;
   -ms-grid-rows: 1fr 1fr 1fr;
@@ -161,8 +143,22 @@ body {
       -ms-flex-align: center;
           align-items: center;
   justify-items: center;
-  padding: 0 3rem;
+  padding: 2rem 3rem;
   background: white;
+}
+
+.tip p {
+  position: absolute;
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+  color: #5e7a7d;
+  font-size: 1.4rem;
+  white-space: nowrap;
+  height: 0;
+  width: 0;
+  position: absolute;
+  top: 0rem;
+  left: 8%;
 }
 
 .button1 {
@@ -196,6 +192,7 @@ body {
 }
 
 .button6 {
+  position: absolute;
   -ms-grid-row: 3;
   -ms-grid-column: 2;
   grid-area: button6;
@@ -212,6 +209,7 @@ body {
 }
 
 .tip button:not(.button6) {
+  position: absolute;
   width: 13rem;
   height: 4.5rem;
   background-color: #00494d;
@@ -228,8 +226,13 @@ body {
   background-color: #26c0ab;
 }
 
-.numberPeople p {
+.numberPeople {
+  background-color: white;
   position: relative;
+}
+
+.numberPeople p {
+  position: absolute;
   font-family: "Space Mono", monospace;
   font-weight: 700;
   color: #5e7a7d;
@@ -237,18 +240,13 @@ body {
   white-space: nowrap;
   height: 0;
   width: 0;
-  top: 1rem;
-  left: 8%;
-}
-
-.numberPeople {
-  background-color: white;
+  top: .5rem;
+  left: 7.7%;
 }
 
 .numberPeople input {
   height: 35%;
   width: 85%;
-  margin: auto;
   padding-top: .7rem;
   padding-right: 1.3rem;
   padding-bottom: .8rem;
@@ -270,13 +268,91 @@ body {
 
 .calculationContainer {
   background-color: white;
+  width: 100vw;
 }
 
-.calculation {
+.calculationContainer .calculation {
+  display: -ms-grid;
+  display: grid;
+  position: relative;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  -ms-grid-rows: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
+      grid-template-areas: "amount amountCalc" "total totalCalc" "reset reset";
   background-color: #00494d;
-  height: 80%;
-  width: 80% !important;
-  margin-left: 2.8rem;
-  margin-right: 3rem;
+  height: 90%;
+  width: 80%;
+  margin-left: 10%;
+  margin-bottom: 2rem;
+  border: 0px solid white;
+  border-radius: 1rem;
+}
+
+.calculationContainer .calculation .tipAmount {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: amount;
+  width: 80%;
+  -ms-flex-item-align: start;
+      -ms-grid-row-align: start;
+      align-self: start;
+  -ms-grid-column-align: start;
+      justify-self: start;
+}
+
+.calculationContainer .calculation .total {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: total;
+  width: 80%;
+  -ms-flex-item-align: start;
+      -ms-grid-row-align: start;
+      align-self: start;
+  -ms-grid-column-align: start;
+      justify-self: start;
+}
+
+.calculationContainer .calculation .reset {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: reset;
+  width: 30%;
+  height: 4rem;
+  margin-left: 4rem;
+  border-radius: .5rem;
+  outline: none;
+  border: none;
+  background-color: #26c0ab;
+  font-family: "Space Mono", monospace;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #00494d;
+}
+
+.calculationContainer .calculation .amountCalc {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: amountCalc;
+  color: white;
+  width: 10%;
+  -ms-flex-item-align: start;
+      -ms-grid-row-align: start;
+      align-self: start;
+  -ms-grid-column-align: end;
+      justify-self: end;
+}
+
+.totalCalc {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: totalCalc;
+  width: 1rem;
+  -ms-flex-item-align: start;
+      -ms-grid-row-align: start;
+      align-self: start;
+  -ms-grid-column-align: end;
+      justify-self: end;
 }
 /*# sourceMappingURL=styles.css.map */

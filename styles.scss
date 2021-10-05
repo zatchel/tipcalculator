@@ -44,7 +44,7 @@ html{
 
 
 body{
-    position: fixed;
+    position: relative;
     width: 100vw;
     background: $darkGrayishCyan;
 }
@@ -81,7 +81,7 @@ body{
 
 @mixin headingStyle(){
     // display: block;
-    position: relative;
+    position: absolute;
     font-family: $font;
     font-weight: 700;
     color: $darkGrayishCyan;
@@ -93,8 +93,7 @@ body{
 }
 
 .bill{
-    display: flex;
-    flex-direction: row;
+    position: relative;
     background-color: $white;
     // border: 0px solid white;
     border-top-right-radius: 3em;
@@ -111,7 +110,6 @@ body{
 @mixin numberInputFields() {
     height: 35%;
     width: 85%;
-    margin: auto;
     padding-top: .7rem;
     padding-right: 1.3rem;
     padding-bottom: .8rem;
@@ -128,6 +126,8 @@ body{
 
 .bill input{
     @include numberInputFields();
+    margin-left: 3rem;
+    margin-top: 3.5rem;
 }
 
 .bill input::placeholder{
@@ -139,18 +139,9 @@ body{
     color: $darkGrayishCyanTwo;
 }
 
-
-.tip p{
-    @include headingStyle();
-    position: absolute;
-    bottom: 70%;
-    right: 92%;
-
-}
-
-
 .tip{
     display: grid;
+    position: relative;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
     grid-template-areas: 
@@ -159,8 +150,16 @@ body{
     "button5 button6";
     align-items: center;
     justify-items: center;
-    padding: 0 3rem;
-    background: white
+    padding: 2rem 3rem;
+    background: white;
+}
+
+.tip p{
+    @include headingStyle();
+    position: absolute;
+    top: 0rem;
+    left: 8%;
+
 }
 
 .button1{
@@ -185,6 +184,7 @@ body{
 }
 
 .button6{
+    position: absolute;
     grid-area: button6;
     width: 13rem;
     height: 4.5rem;
@@ -199,6 +199,7 @@ body{
 }
 
 .tip button:not(.button6){
+    position: absolute;
     width: 13rem;
     height: 4.5rem;
     background-color: $veryDarkCyan;
@@ -216,14 +217,15 @@ body{
     background-color: $strongCyan;
 }
 
-.numberPeople p{
-    @include headingStyle();
-    top: 1rem;
-    left: 8%;
-}
-
 .numberPeople{
     background-color: $white;
+    position: relative
+}
+
+.numberPeople p{
+    @include headingStyle();
+    top: .5rem;
+    left: 7.7%;
 }
 
 .numberPeople input{
@@ -238,15 +240,86 @@ body{
 
 .calculationContainer{
     background-color: white;
+    width: 100vw;
     
 }
 
-.calculation{
-    background-color: $veryDarkCyan;
-    height: 80%;
-    width: 80% !important; //why does important make this work?? it must be inheriting something.
-    //i need to figure this out, like i can't use important in a solution lmao fuck i quit, but this is where i'm leaving off 
-    margin-left: 2.8rem;
-    margin-right: 3rem;
+.calculationContainer .calculation{
+    display: grid;
+    position: relative;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: 
+    "amount amountCalc"
+    "total totalCalc"
+    "reset reset";
+    // align-items: center;
+    // justify-items: center;
+    // padding: 3rem 2rem 1rem 2rem;
     
+    background-color: $veryDarkCyan;
+    height: 90%;
+    width: 80%;
+    margin-left: 10%;
+    margin-bottom: 2rem;
+    border: 0px solid white;
+    border-radius: 1rem;
+}
+
+// .calculationContainer .calculation h2{
+//     color: white;
+//     font-family: $font;
+// }
+
+// .calculationContainer .calculation p{
+//     position: absolute;
+//     top: .5rem;
+//     color: $darkGrayishCyan;
+//     font-family: $font;
+//     font-weight: 700;
+//     font-size: 1.2rem;
+// }
+
+.calculationContainer .calculation .tipAmount{
+    grid-area: amount;
+    width: 80%;
+    align-self: start;
+    justify-self: start;
+}
+
+.calculationContainer .calculation .total{
+    grid-area: total;
+    width: 80%;
+    align-self: start;
+    justify-self: start;
+}
+
+.calculationContainer .calculation .reset{
+    grid-area: reset;
+    width: 30%;
+    height: 4rem;
+    margin-left: 4rem;
+    border-radius: .5rem;
+    outline: none;
+    border: none;
+    background-color: $strongCyan;
+    font-family: $font;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: $veryDarkCyan;
+}
+
+.calculationContainer .calculation .amountCalc{
+    grid-area: amountCalc;
+    color: white;
+    width: 10%;
+    align-self: start;
+    justify-self: end;
+}
+
+.totalCalc{
+    grid-area: totalCalc;
+    width: 1rem;
+    align-self: start;
+    justify-self: end;
 }
